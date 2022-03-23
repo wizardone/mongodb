@@ -133,7 +133,9 @@ defmodule Mongo.Topology do
       })
   end
 
-  def handle_call(:topology, _from, state) do
+  def handle_call(:topology, from, state) do
+    IO.inspect("INSIDE HANDLE CALL")
+    IO.inspect(from)
     {:reply, state.topology, state}
   end
 

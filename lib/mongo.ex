@@ -1239,6 +1239,10 @@ defmodule Mongo do
   #       and then potentially having an outdated topology when waiting for the
   #       connection.
   defp select_servers(topology_pid, type, opts, start_time) do
+    IO.inspect("SELECTING SERVERS")
+    IO.inspect(topology_pid)
+    IO.inspect(type)
+    IO.inspect(opts)
     topology = Topology.topology(topology_pid)
 
     with {:ok, servers, slave_ok, mongos?} <-
